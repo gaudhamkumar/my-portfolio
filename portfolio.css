@@ -1,0 +1,2402 @@
+/* Global reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Default Light Mode Styles (Applied to body initially) */
+body {
+    background-color: whitesmoke;
+    color: #333;
+    font-family: "Poppins", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    min-height: 100vh;
+}
+
+body.dark-mode {
+    background-color: #1a1a1a;
+    color: #f0f0f0;
+}
+
+/* --- Navigation Bar Styles --- */
+.navbar {
+    min-height: 60px;
+    background-color: black !important;
+    transition: background-color 0.3s ease;
+    position: fixed;
+    top: 0;
+    width: 100%;
+    z-index: 1030;
+
+
+}
+
+.navbar-nav .nav-link {
+    position: relative;
+    color: white !important;
+    text-decoration: none;
+    margin: 0 10px;
+    font-size: 15px;
+    transition: all 0.3s ease;
+}
+
+.navbar-nav .nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 0;
+    height: 2px;
+    background-color: #f7f7f8;
+    transition: width 0.3s ease;
+}
+
+.navbar-nav .nav-link:hover::after {
+    width: 100%;
+}
+
+.navbar-brand {
+
+    font-family: "Great Vibes", cursive;
+    font-size: 33px;
+    background: linear-gradient(to right, #f2ff00);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+    text-shadow: none;
+    transition: background-position 0.4s ease-in-out,
+        text-shadow 0.4s ease-in-out;
+}
+
+.navbar-brand:hover {
+
+    text-shadow: 0 0 8px rgba(109, 231, 22, 0.7),
+        0 0 15px rgba(43, 122, 226, 0.5);
+
+}
+
+/* Fallback for older browsers if gradient isn't supported */
+@supports not (-webkit-background-clip: text) {
+    .navbar-brand {
+        color: #61dafb !important;
+
+    }
+}
+
+
+/* --- Theme Toggle Button and Icon Styles --- */
+#theme-toggle-btn {
+
+    font-size: 1.6em;
+    cursor: pointer;
+    color: #f0f0f0 !important;
+    transition: color 0.3s ease;
+}
+
+#theme-toggle-btn:hover {
+    color: #ffffff !important;
+
+}
+
+/* Styles for the Sun Icon */
+#theme-icon-sun {
+    color: #ffc107;
+    transition: color 0.3s ease;
+
+}
+
+/* Styles for the Moon Icon */
+#theme-icon-moon {
+    color: #bdbdbd;
+    transition: color 0.3s ease;
+
+}
+
+/* Dark Mode specific styles for the icons (controlled by JS toggling 'display') */
+body.dark-mode #theme-icon-sun {
+    display: none;
+
+}
+
+body.dark-mode #theme-icon-moon {
+    display: inline-block;
+    color: #ffee00;
+    /* Yellow color for moon in dark mode */
+}
+
+
+
+
+
+
+/* --- HERO SECTION STYLES --- */
+.hero-section {
+    min-height: calc(100vh - 60px);
+    padding: 80px 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+
+.typing-animation-container {
+    display: flex;
+    align-items: center;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    justify-content: center;
+}
+
+@media (min-width: 768px) {
+    .hero-section {
+        justify-content: flex-start;
+        text-align: left;
+    }
+
+    .typing-animation-container {
+        justify-content: flex-start;
+        /* Left-align for larger screens */
+    }
+}
+
+.hero-section h1 {
+    font-family: "Lato", sans-serif;
+    font-size: 2.0em;
+    font-weight: 800;
+    word-spacing: 5px;
+    letter-spacing: 1px;
+
+
+}
+
+body.dark-mode .hero-section h1 {
+    color: #f0f0f0;
+}
+
+.hero-section h1 span {
+    font-family: "Great Vibes", cursive;
+    font-size: 2.0em;
+    font-weight: 800;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    background: linear-gradient(to right, #2319e2, #e45f2f);
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+
+    transition: background-position 0.5s ease;
+    background-size: 200% auto;
+}
+
+.hero-section h1 span:hover {
+    background-position: -100% 0;
+}
+
+/* --- TYPING ANIMATION STYLES --- */
+
+/* Keyframes for the text wipe effect */
+
+@keyframes textWipe {
+
+    0% {
+
+        background-position: 100% 0;
+
+    }
+
+
+
+    100% {
+
+        background-position: 0 0;
+
+    }
+
+}
+
+
+
+/* Keyframes for the subtle flicker/glitch effect (Keep this as is) */
+
+@keyframes subtle-flicker {
+
+
+
+    0%,
+
+    100% {
+
+        opacity: 1;
+        transform: translateZ(0);
+        filter: brightness(100%);
+        text-shadow: none;
+
+    }
+
+    1% {
+
+        opacity: 0.98;
+    }
+
+    2% {
+
+        opacity: 1;
+
+    }
+
+    3% {
+
+        opacity: 0.99;
+
+        filter: brightness(101%);
+
+    }
+
+
+
+    4% {
+
+        opacity: 1;
+
+    }
+
+
+
+    5% {
+
+        opacity: 0.97;
+
+        filter: brightness(99%);
+
+    }
+
+
+
+    6% {
+
+        opacity: 1;
+
+    }
+
+
+
+    7% {
+
+        opacity: 0.98;
+
+    }
+
+
+
+    8% {
+
+        opacity: 1;
+
+    }
+
+
+
+    15% {
+
+        opacity: 0.95;
+
+        transform: translateX(0.5px);
+
+    }
+
+
+
+    16% {
+
+        opacity: 1;
+
+        transform: translateX(-0.5px);
+
+    }
+
+
+
+    20% {
+
+        opacity: 0.97;
+
+        filter: brightness(102%);
+
+    }
+
+
+
+    21% {
+
+        opacity: 1;
+
+    }
+
+}
+
+
+
+.typed-text {
+
+    font-weight: 600;
+    letter-spacing: 0.1px;
+    line-height: 1.3;
+    color: #ffffff;
+    margin-top: 20px;
+    transition: color 0.3s ease;
+    animation: subtle-flicker 3s infinite linear;
+    display: inline-block;
+
+}
+
+
+body.dark-mode .typed-text {
+    color: #f0f0f0;
+
+}
+
+#dynamic-typing-text {
+
+    font-weight: 600;
+    letter-spacing: 0.5px;
+    line-height: 1.2;
+    -webkit-background-clip: text !important;
+    background-clip: text !important;
+    -webkit-text-fill-color: transparent !important;
+    color: transparent !important;
+    display: inline-block;
+    animation: subtle-flicker 3s infinite linear;
+    transition: background 0.1s ease;
+
+}
+
+/* The wipe-effect class is added by JavaScript to trigger the animation */
+#dynamic-typing-text.wipe-effect {
+    background-size: 200% 100%;
+    background-position: 100% 0;
+    /* Start with gradient hidden for wipe-in effect */
+    animation: textWipe 1.5s ease-out forwards, subtle-flicker 3s infinite linear;
+    /* Combine animations */
+    animation-delay: 0.1s;
+    /* Small delay before wipe starts */
+}
+
+
+
+
+.cursor {
+    display: inline-block;
+    margin-left: 5px;
+    font-size: 2.0rem;
+    color: #6e00db;
+    opacity: 1;
+    position: relative;
+    transform: translateY(-2px);
+    line-height: 1;
+    animation: blink 0.7s step-end infinite,
+        subtle-flicker 2.5s infinite linear;
+}
+
+.hero-section .col-md-8 p {
+    font-size: 1.1rem;
+    font-weight: 300;
+    line-height: 1.7;
+    color: #c1916e;
+    max-width: 700px;
+    margin-top: 20px;
+
+
+}
+
+
+
+/* --- Media Queries --- (Keep as is) */
+@media (max-width: 767.98px) {
+    .hero-section {
+        padding: 60px 0;
+    }
+
+    .hero-section h1 {
+        font-size: 2.0rem;
+    }
+
+    /* Adjust font size for the typed text on smaller screens */
+    #dynamic-typing-text {
+        font-size: 1.5rem;
+    }
+
+    /* Adjust cursor size on smaller screens */
+    .cursor {
+        font-size: 1.5rem;
+    }
+}
+
+/* Small devices (phones, max-width: 575.98px) */
+@media (max-width: 575.98px) {
+    .hero-section {
+        min-height: 80vh;
+        /* Adjust height for mobile if needed */
+        padding: 2rem 0;
+    }
+
+    .hero-section h1 {
+        font-size: 1.5rem;
+
+    }
+
+
+    #dynamic-typing-text {
+        font-size: 1.0rem;
+    }
+
+    .hero-section .cursor {
+        font-size: 1.2rem;
+
+    }
+
+    .hero-section .col-md-8 p {
+        /* Target the lorem paragraph */
+        font-size: 0.95rem;
+        /* Smaller body text on mobile */
+        text-align: center;
+        /* Center paragraph text on mobile for better flow */
+    }
+}
+
+/* --- Typing Animation Keyframes (Essential for the typing effect) --- */
+@keyframes typing {
+    from {
+        width: 0
+    }
+
+    to {
+        width: 100%
+    }
+}
+
+@keyframes blink-caret {
+
+    from,
+    to {
+        border-color: transparent
+    }
+
+    50% {
+        border-color: #f1c40f;
+    }
+
+    /* Matches accent color for blinking cursor */
+}
+
+/* Keyframes for the blinking cursor animation (Keep this as is) */
+@keyframes blink {
+
+    0%,
+    100% {
+        opacity: 1;
+    }
+
+    50% {
+        opacity: 0;
+    }
+}
+
+
+
+
+/* --- General Section Styles --- (Keep as is) */
+main section {
+    padding: 50px;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+main section:nth-of-type(odd) {
+    background-color: #f8f9fa;
+    color: #333;
+}
+
+body.dark-mode main section:nth-of-type(odd) {
+    background-color: #2a2a2a !important;
+    color: #f0f0f0;
+}
+
+
+
+
+/* about me section*/
+
+
+
+
+h2,
+h3 {
+    /* Light Mode Default Colors for Headings */
+    color: #437f98;
+    /* --heading-color-light */
+}
+
+body.dark-mode h2,
+h3 {
+    color: #437f98;
+
+}
+
+/* Light Mode Default styles for the about content card */
+.about-section .about-content {
+    background-color: #ffffff;
+    /* --card-background-light */
+    border: 1px solid #e0e0e0;
+    /* --border-color-light */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.4);
+    /* Subtle shadow */
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease;
+
+}
+
+/* --- General Layout and Responsive Styling --- */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+.about-section {
+    padding: 60px 0;
+    text-align: center;
+}
+
+.about-section h2 {
+    font-size: 2.8em;
+    margin-bottom: 40px;
+    position: relative;
+    display: inline-block;
+}
+
+.about-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -10px;
+    transform: translateX(-50%);
+    width: 70px;
+    height: 4px;
+    background-color: #1a97eb;
+    /* --accent-color-light */
+    border-radius: 2px;
+    transition: background-color 0.3s ease;
+}
+
+/* Dark mode specific color for the heading underline */
+body[data-theme='dark'] .about-section h2::after {
+    background-color: #8fd3f4;
+    /* --accent-color-dark */
+}
+
+.about-content {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    gap: 40px;
+    padding: 40px;
+    border-radius: 12px;
+}
+
+.about-image-wrapper {
+    flex: 1;
+    min-width: 250px;
+    max-width: 350px;
+    text-align: center;
+}
+
+.about-image {
+    width: 100%;
+    height: auto;
+    max-width: 300px;
+    border-radius: 50%;
+    border: 6px solid #3498db;
+    /* --accent-color-light */
+    object-fit: cover;
+    aspect-ratio: 1 / 1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+    transition: border-color 0.3s ease;
+}
+
+/* Dark mode specific color for the image border */
+body[data-theme='dark'] .about-image {
+    border: 6px solid #8fd3f4;
+    /* --accent-color-dark */
+}
+
+.about-text-content {
+    flex: 2;
+    min-width: 300px;
+    text-align: left;
+    line-height: 1.7;
+}
+
+.about-text-content h3 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.about-text-content p {
+    margin-bottom: 15px;
+    font-size: 1.1em;
+    color: rgb(42, 73, 10);
+}
+
+body.dark-mode .about-text-content p {
+    color: #e28f13;
+
+}
+
+
+
+
+.about-text-content p:last-child {
+    margin-bottom: 0;
+}
+
+/* --- Responsive Design --- */
+@media (max-width: 992px) {
+    .about-content {
+        flex-direction: column;
+        padding: 30px;
+        gap: 30px;
+    }
+
+    .about-image-wrapper {
+        max-width: 250px;
+    }
+
+    .about-image {
+        max-width: 200px;
+    }
+
+    .about-text-content {
+        text-align: center;
+        min-width: unset;
+    }
+
+    .about-text-content h3 {
+        font-size: 1.8em;
+    }
+
+    .about-text-content p {
+        font-size: 1em;
+    }
+
+    .about-section h2 {
+        font-size: 2.2em;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 40px 0;
+    }
+
+    .about-section h2 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .about-content {
+        padding: 20px;
+        gap: 20px;
+    }
+
+    .about-image-wrapper {
+        min-width: 200px;
+    }
+
+    .about-image {
+        width: 150px;
+        height: 150px;
+    }
+
+    .about-text-content h3 {
+        font-size: 1.6em;
+    }
+
+    .about-text-content p {
+        font-size: 0.95em;
+    }
+}
+
+@media (max-width: 480px) {
+    .about-section {
+        padding: 30px 0;
+    }
+
+    .about-section h2 {
+        font-size: 1.8em;
+    }
+
+    .about-content {
+        padding: 15px;
+    }
+
+    .about-image-wrapper {
+        min-width: unset;
+        width: 120px;
+    }
+
+    .about-image {
+        width: 120px;
+        height: 120px;
+        border-width: 4px;
+    }
+
+    .about-text-content h3 {
+        font-size: 1.4em;
+    }
+
+    .about-text-content p {
+        font-size: 0.9em;
+    }
+}
+
+
+
+
+
+/* --- Skills Section Styling --- */
+
+.skills-section {
+    padding: 90px 0;
+    /* More vertical padding for a grander feel */
+    text-align: center;
+    background-color: #F0F2F5;
+    /* Very light grey background for the section */
+    color: #333333;
+    /* Light mode text color */
+    transition: background-color 0.4s ease, color 0.4s ease;
+    /* Smoother transitions */
+}
+
+.skills-section h2 {
+    font-size: 3.2em;
+    /* Even larger heading */
+    margin-bottom: 60px;
+    /* More space below heading */
+    position: relative;
+    display: inline-block;
+    color: #2D3A47;
+    /* Deep blue-grey heading for light mode */
+    letter-spacing: 1px;
+    /* Slightly spaced out letters */
+}
+
+.skills-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -18px;
+    /* Adjust underline position */
+    transform: translateX(-50%);
+    width: 100px;
+    /* Wider underline */
+    height: 6px;
+    /* Thicker underline */
+    background-color: #6C63FF;
+    /* A vibrant purple accent for light mode */
+    border-radius: 4px;
+    transition: background-color 0.4s ease;
+}
+
+.skills-categories {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 50px;
+    /* Increased space between skill categories */
+}
+
+.skill-category {
+    background: linear-gradient(145deg, #FFFFFF, #F0F2F5);
+    /* Subtle gradient for light mode cards */
+    border: none;
+    /* No explicit border, rely on shadow */
+    border-radius: 20px;
+    /* More rounded corners */
+    padding: 40px;
+    /* Generous padding inside category cards */
+    flex: 1 1 calc(50% - 50px);
+    /* Two columns on larger screens */
+    max-width: calc(50% - 25px);
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.08), -8px -8px 15px rgba(255, 255, 255, 0.7);
+    /* Neumorphic-like shadow */
+    transition: background 0.4s ease, box-shadow 0.4s ease;
+    display: flex;
+    /* Use flex for internal alignment */
+    flex-direction: column;
+    align-items: center;
+    /* Center content horizontally */
+}
+
+.skill-category h3 {
+    font-size: 2.4em;
+    /* Larger category headings */
+    margin-bottom: 35px;
+    color: #2D3A47;
+    /* Deep blue-grey heading for light mode */
+    position: relative;
+    letter-spacing: 0.5px;
+}
+
+.skill-category h3::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -12px;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 3px;
+    background-color: #6C63FF;
+    /* Accent for category heading underline */
+    transition: background-color 0.4s ease;
+}
+
+.skills-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    /* Larger min-width for skill cards */
+    gap: 25px;
+    /* More space between skill cards */
+    justify-items: center;
+    width: 100%;
+    /* Ensure grid takes full width of category */
+}
+
+.skill-card {
+    background-color: #E0E2E6;
+    /* Slightly darker base for skill cards */
+    color: #4A5568;
+    /* Darker text on skill card */
+    padding: 18px 30px;
+    /* More padding */
+    border-radius: 12px;
+    /* Rounded corners */
+    font-size: 1.15em;
+    /* Slightly larger text */
+    font-weight: 600;
+    /* Bolder text */
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+    /* Inner shadow for "pressed" look */
+}
+
+.skill-card:hover {
+    transform: translateY(-3px);
+    /* Subtle lift */
+    background-color: #D1D4D8;
+    /* Slightly darker on hover */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15), -4px -4px 10px rgba(255, 255, 255, 0.8);
+    /* Outer shadow on hover */
+    color: #6C63FF;
+    /* Accent color on hover */
+}
+
+/* --- Dark Mode for Skills Section --- */
+body.dark-mode .skills-section {
+    background-color: #2A2E33;
+    /* Dark background for the section */
+    color: #E0E0E0;
+    /* Dark mode text color */
+}
+
+body.dark-mode .skills-section h2 {
+    color: #FFFFFF;
+    /* Dark mode heading color */
+}
+
+body.dark-mode .skills-section h2::after {
+    background-color: #9B93FF;
+    /* Dark mode accent color (lighter purple) */
+}
+
+body.dark-mode .skill-category {
+    background: linear-gradient(145deg, #3A4048, #2A2E33);
+    /* Dark mode gradient for cards */
+    box-shadow: 8px 8px 15px rgba(0, 0, 0, 0.6), -8px -8px 15px rgba(60, 65, 70, 0.3);
+    /* Darker neumorphic shadow */
+}
+
+body.dark-mode .skill-category h3 {
+    color: #FFFFFF;
+    /* Dark mode heading color */
+}
+
+body.dark-mode .skill-category h3::after {
+    background-color: #9B93FF;
+    /* Dark mode accent for category heading underline */
+}
+
+body.dark-mode .skill-card {
+    background-color: #3D434B;
+    /* Darker base for skill cards in dark mode */
+    color: #C0C5CC;
+    /* Lighter text on skill card in dark mode */
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4), inset -2px -2px 5px rgba(60, 65, 70, 0.2);
+    /* Dark inner shadow */
+}
+
+body.dark-mode .skill-card:hover {
+    transform: translateY(-3px);
+    background-color: #4A5158;
+    /* Slightly darker on hover in dark mode */
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.5), -4px -4px 10px rgba(60, 65, 70, 0.3);
+    /* Dark outer shadow on hover */
+    color: #9B93FF;
+    /* Accent color on hover in dark mode */
+}
+
+
+/* --- Responsive Design for Skills Section --- */
+@media (max-width: 992px) {
+    .skills-section {
+        padding: 70px 0;
+    }
+
+    .skills-section h2 {
+        font-size: 2.8em;
+        margin-bottom: 50px;
+    }
+
+    .skills-section h2::after {
+        width: 90px;
+        height: 5px;
+    }
+
+    .skills-categories {
+        gap: 40px;
+    }
+
+    .skill-category {
+        flex: 1 1 calc(50% - 40px);
+        max-width: calc(50% - 20px);
+        padding: 35px;
+        border-radius: 18px;
+    }
+
+    .skill-category h3 {
+        font-size: 2em;
+        margin-bottom: 30px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(130px, 1fr));
+        gap: 20px;
+    }
+
+    .skill-card {
+        padding: 15px 25px;
+        font-size: 1.05em;
+        border-radius: 10px;
+    }
+}
+
+@media (max-width: 768px) {
+    .skills-section {
+        padding: 60px 0;
+    }
+
+    .skills-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 40px;
+    }
+
+    .skills-section h2::after {
+        width: 80px;
+        bottom: -15px;
+    }
+
+    .skills-categories {
+        gap: 30px;
+    }
+
+    .skill-category {
+        flex: 1 1 90%;
+        /* Single column on smaller screens */
+        max-width: 90%;
+        padding: 30px;
+        border-radius: 15px;
+    }
+
+    .skill-category h3 {
+        font-size: 1.8em;
+        margin-bottom: 25px;
+    }
+
+    .skill-category h3::after {
+        bottom: -10px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(110px, 1fr));
+        gap: 18px;
+    }
+
+    .skill-card {
+        padding: 12px 20px;
+        font-size: 1em;
+    }
+}
+
+@media (max-width: 480px) {
+    .skills-section {
+        padding: 50px 0;
+    }
+
+    .skills-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .skills-section h2::after {
+        width: 70px;
+        height: 4px;
+    }
+
+    .skill-category {
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .skill-category h3 {
+        font-size: 1.6em;
+        margin-bottom: 20px;
+    }
+
+    .skill-category h3::after {
+        bottom: -8px;
+    }
+
+    .skills-grid {
+        grid-template-columns: repeat(auto-fit, minmax(90px, 1fr));
+        gap: 15px;
+    }
+
+    .skill-card {
+        padding: 10px 15px;
+        font-size: 0.9em;
+        border-radius: 8px;
+    }
+}
+
+
+
+
+
+/* --- Projects Section Styling --- */
+.projects-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #F8F8F8;
+    /* Light background for the section */
+    color: #333333;
+    /* Light mode text color */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.projects-section h2 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    color: #2D3A47;
+    /* Deep blue-grey heading for light mode */
+    letter-spacing: 1px;
+}
+
+.projects-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background-color: #6C63FF;
+    /* Vibrant purple accent for light mode */
+    border-radius: 3px;
+    transition: background-color 0.4s ease;
+}
+
+.projects-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    /* Responsive grid for projects */
+    gap: 40px;
+    /* Space between project cards */
+    justify-content: center;
+    /* Center cards in the grid */
+    padding-top: 20px;
+    /* Space between title and first row of cards */
+}
+
+.project-card {
+    background-color: #FFFFFF;
+    /* White background for project cards */
+    border-radius: 15px;
+    /* Rounded corners */
+    overflow: hidden;
+    /* Ensures image corners are also rounded */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    /* Soft, prominent shadow */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.project-card:hover {
+    transform: translateY(-8px);
+    /* Lift effect on hover */
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    /* Stronger shadow on hover */
+}
+
+.project-image-wrapper {
+    width: 100%;
+    height: 250px;
+    /* Fixed height for consistent image size */
+    overflow: hidden;
+}
+
+.project-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    /* Cover the area, crop if necessary */
+    transition: transform 0.3s ease;
+}
+
+.project-card:hover .project-image {
+    transform: scale(1.05);
+    /* Slight zoom on image on hover */
+}
+
+.project-content {
+    padding: 25px;
+    text-align: left;
+    flex-grow: 1;
+    /* Allows content to take up remaining space, useful for varied descriptions */
+    display: flex;
+    flex-direction: column;
+}
+
+.project-content h3 {
+    font-size: 1.8em;
+    margin-bottom: 15px;
+    color: #2D3A47;
+    /* Heading color for project title */
+}
+
+.project-content p {
+    font-size: 1em;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    color: #555555;
+    /* Paragraph text color */
+    flex-grow: 1;
+    /* Allows description to push links to the bottom */
+}
+
+.project-links {
+    display: flex;
+    gap: 15px;
+    /* Space between buttons */
+    margin-top: auto;
+    /* Pushes links to the bottom of the card */
+}
+
+.btn {
+    display: inline-block;
+    padding: 12px 25px;
+    border-radius: 8px;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: 0.95em;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    cursor: pointer;
+}
+
+.live-demo-btn {
+    background-color: #f95a5a;
+    /* Accent color for demo button */
+    color: #ffffff;
+    /* White text */
+    border: 2px solid #ff6363;
+}
+
+.live-demo-btn:hover {
+    background-color: #ff6f6f;
+    /* Slightly darker purple on hover */
+    border-color: #d05353;
+}
+
+.github-btn {
+    background-color: #FFFFFF;
+    /* White background for GitHub button */
+    color: #2D3A47;
+    /* Dark text */
+    border: 2px solid #D0D0D0;
+    /* Light grey border */
+}
+
+.github-btn:hover {
+    background-color: #F0F0F0;
+    /* Slightly darker white on hover */
+    border-color: #B0B0B0;
+}
+
+/* --- Dark Mode for Projects Section --- */
+body.dark-mode .projects-section {
+    background-color: #2A2E33;
+    /* Dark background for the section */
+    color: #E0E0E0;
+    /* Dark mode text color */
+}
+
+body.dark-mode .projects-section h2 {
+    color: #FFFFFF;
+    /* Dark mode heading color */
+}
+
+body.dark-mode .projects-section h2::after {
+    background-color: #9B93FF;
+    /* Dark mode accent color (lighter purple) */
+}
+
+body.dark-mode .project-card {
+    background-color: #3A4048;
+    /* Darker background for project cards */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    /* Stronger shadow for dark mode */
+}
+
+body.dark-mode .project-card:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .project-content h3 {
+    color: #FFFFFF;
+    /* White heading for project title in dark mode */
+}
+
+body.dark-mode .project-content p {
+    color: #B0B0B0;
+    /* Lighter grey text for paragraph in dark mode */
+}
+
+body.dark-mode .live-demo-btn {
+    background-color: #09dcfd;
+    /* Dark mode accent for demo button */
+    border: 2px solid #9B93FF;
+    color: #2A2E33;
+    /* Dark text on lighter button */
+}
+
+body.dark-mode .live-demo-btn:hover {
+    background-color: #a7f3f6;
+    /* Slightly darker purple on hover */
+    border-color: #8A81E1;
+}
+
+body.dark-mode .github-btn {
+    background-color: #4A5158;
+    /* Dark background for GitHub button */
+    color: #D0D7DE;
+    /* Light text */
+    border: 2px solid #5A626A;
+    /* Darker border */
+}
+
+body.dark-mode .github-btn:hover {
+    background-color: #5A626A;
+    /* Slightly darker grey on hover */
+    border-color: #6A727A;
+}
+
+/* --- Responsive Design for Projects Section --- */
+@media (max-width: 992px) {
+    .projects-section {
+        padding: 70px 0;
+    }
+
+    .projects-section h2 {
+        font-size: 2.8em;
+        margin-bottom: 40px;
+    }
+
+    .projects-section h2::after {
+        width: 80px;
+        height: 4px;
+    }
+
+    .projects-grid {
+        gap: 30px;
+    }
+
+    .project-card {
+        border-radius: 12px;
+    }
+
+    .project-image-wrapper {
+        height: 220px;
+    }
+
+    .project-content {
+        padding: 20px;
+    }
+
+    .project-content h3 {
+        font-size: 1.6em;
+    }
+
+    .project-content p {
+        font-size: 0.95em;
+        margin-bottom: 20px;
+    }
+
+    .btn {
+        padding: 10px 20px;
+        font-size: 0.9em;
+    }
+}
+
+@media (max-width: 768px) {
+    .projects-section {
+        padding: 60px 0;
+    }
+
+    .projects-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 35px;
+    }
+
+    .projects-section h2::after {
+        width: 70px;
+        bottom: -12px;
+    }
+
+    .projects-grid {
+        grid-template-columns: 1fr;
+        /* Stack projects in a single column on smaller screens */
+        gap: 30px;
+    }
+
+    .project-image-wrapper {
+        height: 200px;
+    }
+
+    .project-content {
+        padding: 18px;
+    }
+
+    .project-content h3 {
+        font-size: 1.5em;
+    }
+
+    .project-content p {
+        font-size: 0.9em;
+        margin-bottom: 18px;
+    }
+
+    .project-links {
+        justify-content: center;
+        /* Center buttons when stacked */
+    }
+}
+
+@media (max-width: 480px) {
+    .projects-section {
+        padding: 50px 0;
+    }
+
+    .projects-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .projects-section h2::after {
+        width: 60px;
+        height: 3px;
+        bottom: -10px;
+    }
+
+    .project-card {
+        border-radius: 10px;
+    }
+
+    .project-image-wrapper {
+        height: 180px;
+    }
+
+    .project-content {
+        padding: 15px;
+    }
+
+    .project-content h3 {
+        font-size: 1.3em;
+    }
+
+    .project-content p {
+        font-size: 0.85em;
+        margin-bottom: 15px;
+    }
+
+    .btn {
+        padding: 8px 15px;
+        font-size: 0.85em;
+    }
+
+    .project-links {
+        flex-direction: column;
+        /* Stack buttons vertically on very small screens */
+        gap: 10px;
+    }
+}
+
+
+
+
+
+/* --- Resume Section Styling --- */
+.resume-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #F8F8F8;
+    /* Light background */
+    color: #333333;
+    /* Light mode text color */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.resume-section h2 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    color: #2D3A47;
+    /* Deep blue-grey heading */
+    letter-spacing: 1px;
+}
+
+.resume-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background-color: #0d05b0;
+    /* Vibrant purple accent */
+    border-radius: 3px;
+    transition: background-color 0.4s ease;
+}
+
+.resume-intro-text {
+    font-size: 1.15em;
+    max-width: 800px;
+    margin: 0 auto 40px auto;
+    line-height: 1.7;
+    color: #555555;
+}
+
+.download-resume-btn {
+    background-color: #21bb33;
+    /* Accent color */
+    color: #FFFFFF;
+    border: 2px solid #428f2d;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 10px;
+    display: inline-flex;
+    /* Allows icon and text to align */
+    align-items: center;
+    gap: 10px;
+    /* Space between icon and text */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.download-resume-btn:hover {
+    background-color: #2ce13e;
+    /* Slightly darker purple on hover */
+    border-color: #388831;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.resume-summary-box {
+    margin-top: 60px;
+    background-color: #FFFFFF;
+    border-radius: 15px;
+    padding: 40px;
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    color: #333333;
+}
+
+.resume-summary-box h3 {
+    font-size: 1.8em;
+    color: #2D3A47;
+    margin-bottom: 25px;
+    text-align: center;
+}
+
+.resume-summary-box ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.resume-summary-box ul li {
+    font-size: 1.1em;
+    margin-bottom: 15px;
+    line-height: 1.6;
+    display: flex;
+    align-items: flex-start;
+}
+
+.resume-summary-box ul li strong {
+    min-width: 120px;
+    /* Align labels */
+    display: inline-block;
+    color: #6C63FF;
+    /* Accent color for labels */
+}
+
+/* --- Certifications Section Styling --- */
+.certifications-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #FFFFFF;
+    /* White background */
+    color: #333333;
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.certifications-section h2 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    color: #2D3A47;
+    letter-spacing: 1px;
+}
+
+.certifications-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background-color: #6C63FF;
+    border-radius: 3px;
+    transition: background-color 0.4s ease;
+}
+
+.certifications-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 30px;
+    /* Space between certification cards */
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.certification-card {
+    background-color: #F8F8F8;
+    /* Light grey background for cards */
+    border-radius: 15px;
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.08);
+    padding: 30px;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    /* Pushes button to bottom */
+    transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+}
+
+.certification-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.15);
+}
+
+.certification-card h3 {
+    font-size: 1.6em;
+    color: #2D3A47;
+    margin-bottom: 15px;
+    line-height: 1.3;
+}
+
+.certification-card .issuer,
+.certification-card .date {
+    font-size: 0.95em;
+    color: #777777;
+    margin-bottom: 8px;
+}
+
+.certification-card .date {
+    margin-bottom: 25px;
+    /* Space before the button */
+}
+
+.verify-btn {
+    background-color: #6C63FF;
+    /* Accent color */
+    color: #FFFFFF;
+    border: 2px solid #6C63FF;
+    padding: 10px 20px;
+    font-size: 0.9em;
+    font-weight: 600;
+    border-radius: 8px;
+    text-decoration: none;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    /* Center button content */
+    gap: 8px;
+    margin-top: auto;
+    /* Pushes button to the bottom */
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.08);
+}
+
+.verify-btn:hover {
+    background-color: #5B53D0;
+    border-color: #5B53D0;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+
+/* --- Dark Mode for Resume & Certifications Sections --- */
+body.dark-mode .resume-section {
+    background-color: #000307;
+    /* Dark background */
+    color: #E0E0E0;
+    /* Dark mode text color */
+}
+
+body.dark-mode .certifications-section {
+    background-color: #3c3f44;
+    /* Dark background */
+    color: #E0E0E0;
+    /* Dark mode text color */
+}
+
+body.dark-mode .resume-section h2,
+body.dark-mode .certifications-section h2 {
+    color: #FFFFFF;
+    /* White heading */
+}
+
+body.dark-mode .resume-section h2::after,
+body.dark-mode .certifications-section h2::after {
+    background-color: #ff9393;
+    /* Dark mode accent color */
+}
+
+body.dark-mode .resume-intro-text {
+    color: ghostwhite;
+    /* Lighter grey text */
+}
+
+body.dark-mode .download-resume-btn,
+body.dark-mode .verify-btn {
+    background-color: #3c68f7;
+    border-color: #5d8ee4;
+    color: #2A2E33;
+    /* Dark text on lighter button */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .download-resume-btn:hover,
+body.dark-mode .verify-btn:hover {
+    background-color: #2e1dc6;
+    border-color: #2c1db3;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .resume-summary-box {
+    background-color: #3A4048;
+    /* Darker card background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+    color: #E0E0E0;
+}
+
+body.dark-mode .resume-summary-box h3 {
+    color: #FFFFFF;
+}
+
+body.dark-mode .resume-summary-box ul li strong {
+    color: #9B93FF;
+    /* Dark mode accent for labels */
+}
+
+body.dark-mode .certification-card {
+    background-color: #3A4048;
+    /* Darker card background */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .certification-card:hover {
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .certification-card h3 {
+    color: #FFFFFF;
+}
+
+body.dark-mode .certification-card .issuer,
+body.dark-mode .certification-card .date {
+    color: #B0B0B0;
+    /* Lighter grey text */
+}
+
+/* --- Responsive Design for Resume & Certifications --- */
+@media (max-width: 992px) {
+
+    .resume-section,
+    .certifications-section {
+        padding: 70px 0;
+    }
+
+    .resume-section h2,
+    .certifications-section h2 {
+        font-size: 2.8em;
+        margin-bottom: 40px;
+    }
+
+    .resume-section h2::after,
+    .certifications-section h2::after {
+        width: 80px;
+        height: 4px;
+    }
+
+    .resume-intro-text {
+        font-size: 1.1em;
+        margin-bottom: 30px;
+    }
+
+    .download-resume-btn {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+
+    .resume-summary-box {
+        padding: 30px;
+        margin-top: 50px;
+    }
+
+    .resume-summary-box h3 {
+        font-size: 1.6em;
+    }
+
+    .resume-summary-box ul li {
+        font-size: 1em;
+    }
+
+    .certifications-grid {
+        gap: 25px;
+    }
+
+    .certification-card {
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .certification-card h3 {
+        font-size: 1.4em;
+    }
+
+    .certification-card .issuer,
+    .certification-card .date {
+        font-size: 0.9em;
+    }
+
+    .verify-btn {
+        padding: 9px 18px;
+        font-size: 0.85em;
+    }
+}
+
+@media (max-width: 768px) {
+
+    .resume-section,
+    .certifications-section {
+        padding: 60px 0;
+    }
+
+    .resume-section h2,
+    .certifications-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 35px;
+    }
+
+    .resume-section h2::after,
+    .certifications-section h2::after {
+        width: 70px;
+        bottom: -12px;
+    }
+
+    .resume-intro-text {
+        font-size: 1em;
+        margin-bottom: 25px;
+    }
+
+    .download-resume-btn {
+        padding: 10px 25px;
+        font-size: 0.95em;
+    }
+
+    .resume-summary-box {
+        padding: 25px;
+        margin-top: 40px;
+    }
+
+    .resume-summary-box h3 {
+        font-size: 1.4em;
+    }
+
+    .resume-summary-box ul li {
+        font-size: 0.95em;
+    }
+
+    .certifications-grid {
+        grid-template-columns: 1fr;
+        /* Stack on small screens */
+        gap: 25px;
+    }
+
+    .certification-card {
+        padding: 25px;
+    }
+
+    .certification-card h3 {
+        font-size: 1.3em;
+    }
+}
+
+@media (max-width: 480px) {
+
+    .resume-section,
+    .certifications-section {
+        padding: 50px 0;
+    }
+
+    .resume-section h2,
+    .certifications-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .resume-section h2::after,
+    .certifications-section h2::after {
+        width: 60px;
+        height: 3px;
+        bottom: -10px;
+    }
+
+    .download-resume-btn {
+        padding: 8px 20px;
+        font-size: 0.9em;
+    }
+
+    .resume-summary-box {
+        padding: 20px;
+        margin-top: 30px;
+    }
+
+    .resume-summary-box h3 {
+        font-size: 1.2em;
+    }
+
+    .resume-summary-box ul li {
+        font-size: 0.9em;
+        margin-bottom: 10px;
+    }
+
+    .certifications-grid {
+        gap: 20px;
+    }
+
+    .certification-card {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .certification-card h3 {
+        font-size: 1.2em;
+    }
+
+    .verify-btn {
+        padding: 8px 15px;
+        font-size: 0.8em;
+    }
+}
+
+
+
+
+
+
+/* --- Contact Section Styling --- */
+.contact-section {
+    padding: 80px 0;
+    text-align: center;
+    background-color: #F8F8F8;
+    /* Light background */
+    color: #333333;
+    /* Light mode text color */
+    transition: background-color 0.4s ease, color 0.4s ease;
+}
+
+.contact-section h2 {
+    font-size: 3em;
+    margin-bottom: 50px;
+    position: relative;
+    display: inline-block;
+    color: #2D3A47;
+    /* Deep blue-grey heading */
+    letter-spacing: 1px;
+}
+
+.contact-section h2::after {
+    content: '';
+    position: absolute;
+    left: 50%;
+    bottom: -15px;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 5px;
+    background-color: #6C63FF;
+    /* Vibrant purple accent */
+    border-radius: 3px;
+    transition: background-color 0.4s ease;
+}
+
+.contact-intro-text {
+    font-size: 1.15em;
+    max-width: 800px;
+    margin: 0 auto 50px auto;
+    line-height: 1.7;
+    color: #555555;
+}
+
+.contact-content-wrapper {
+    display: flex;
+    flex-wrap: wrap;
+    /* Allow wrapping on smaller screens */
+    justify-content: center;
+    gap: 50px;
+    /* Space between form and info */
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* --- Contact Form Styling --- */
+.contact-form {
+    flex: 1;
+    /* Allow form to grow */
+    min-width: 300px;
+    /* Minimum width before wrapping */
+    max-width: 600px;
+    /* Max width for form itself */
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group {
+    margin-bottom: 25px;
+}
+
+.form-group label {
+    display: block;
+    font-size: 1em;
+    color: #2D3A47;
+    margin-bottom: 8px;
+    font-weight: 600;
+}
+
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="subject"],
+/* Added subject type */
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    border: 1px solid #CCCCCC;
+    border-radius: 8px;
+    font-size: 1em;
+    background-color: #F8F8F8;
+    color: #333333;
+    transition: border-color 0.3s ease, background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    outline: none;
+    border-color: #6C63FF;
+    /* Accent color on focus */
+    box-shadow: 0 0 0 3px rgba(108, 99, 255, 0.2);
+    /* Light glow */
+}
+
+.form-group textarea {
+    resize: vertical;
+    /* Allow vertical resizing */
+    min-height: 120px;
+}
+
+.submit-btn {
+    background-color: #6C63FF;
+    /* Accent color */
+    color: #FFFFFF;
+    border: 2px solid #6C63FF;
+    padding: 15px 35px;
+    font-size: 1.1em;
+    font-weight: 700;
+    border-radius: 10px;
+    cursor: pointer;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease, transform 0.3s ease;
+    width: auto;
+    /* Allow button to size to content */
+    display: inline-block;
+    /* Keep it inline-block */
+}
+
+.submit-btn:hover {
+    background-color: #5B53D0;
+    /* Slightly darker purple on hover */
+    border-color: #5B53D0;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+/* Hidden honeypot field for spam prevention */
+.hidden-field {
+    display: none;
+}
+
+/* --- Direct Contact Info Styling --- */
+.contact-info {
+    flex: 0.8;
+    /* Allow info to grow less than form */
+    min-width: 280px;
+    /* Minimum width before wrapping */
+    background-color: #FFFFFF;
+    padding: 40px;
+    border-radius: 15px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.08);
+    text-align: left;
+    transition: background-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.contact-info h3 {
+    font-size: 1.8em;
+    color: #2D3A47;
+    margin-bottom: 30px;
+    text-align: center;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 1.1em;
+    color: #555555;
+}
+
+.contact-item i {
+    font-size: 1.5em;
+    color: #6C63FF;
+    /* Accent color for icons */
+    margin-right: 15px;
+    width: 30px;
+    /* Fixed width for icon alignment */
+    text-align: center;
+    transition: color 0.3s ease;
+}
+
+.contact-item a {
+    color: #6C63FF;
+    /* Accent color for links */
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.contact-item a:hover {
+    color: #5B53D0;
+    /* Darker accent on hover */
+    text-decoration: underline;
+}
+
+/* --- Dark Mode for Contact Section --- */
+body.dark-mode .contact-section {
+    background-color: #2A2E33;
+    /* Dark background */
+    color: #E0E0E0;
+    /* Dark mode text color */
+}
+
+body.dark-mode .contact-section h2 {
+    color: #FFFFFF;
+    /* White heading */
+}
+
+body.dark-mode .contact-section h2::after {
+    background-color: #9B93FF;
+    /* Dark mode accent color */
+}
+
+body.dark-mode .contact-intro-text {
+    color: #B0B0B0;
+    /* Lighter grey text */
+}
+
+body.dark-mode .contact-form,
+body.dark-mode .contact-info {
+    background-color: #3A4048;
+    /* Darker card background */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .form-group label {
+    color: #E0E0E0;
+}
+
+body.dark-mode .form-group input[type="text"],
+body.dark-mode .form-group input[type="email"],
+body.dark-mode .form-group input[type="subject"],
+body.dark-mode .form-group textarea {
+    background-color: #2A2E33;
+    /* Even darker input background */
+    border-color: #555555;
+    /* Darker border */
+    color: #E0E0E0;
+    /* Light text in input */
+}
+
+body.dark-mode .form-group input::placeholder,
+body.dark-mode .form-group textarea::placeholder {
+    color: #888888;
+    /* Lighter placeholder text */
+}
+
+body.dark-mode .form-group input:focus,
+body.dark-mode .form-group textarea:focus {
+    border-color: #9B93FF;
+    /* Dark mode accent on focus */
+    box-shadow: 0 0 0 3px rgba(155, 147, 255, 0.3);
+}
+
+body.dark-mode .submit-btn {
+    background-color: #9B93FF;
+    border-color: #9B93FF;
+    color: #2A2E33;
+    /* Dark text on lighter button */
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.4);
+}
+
+body.dark-mode .submit-btn:hover {
+    background-color: #8A81E1;
+    border-color: #8A81E1;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.6);
+}
+
+body.dark-mode .contact-info h3 {
+    color: #FFFFFF;
+}
+
+body.dark-mode .contact-item {
+    color: #B0B0B0;
+}
+
+body.dark-mode .contact-item i {
+    color: #9B93FF;
+}
+
+body.dark-mode .contact-item a {
+    color: #9B93FF;
+}
+
+body.dark-mode .contact-item a:hover {
+    color: #8A81E1;
+}
+
+
+/* --- Responsive Design for Contact Section --- */
+@media (max-width: 992px) {
+    .contact-section {
+        padding: 70px 0;
+    }
+
+    .contact-section h2 {
+        font-size: 2.8em;
+        margin-bottom: 40px;
+    }
+
+    .contact-section h2::after {
+        width: 80px;
+        height: 4px;
+    }
+
+    .contact-intro-text {
+        font-size: 1.1em;
+        margin-bottom: 40px;
+    }
+
+    .contact-content-wrapper {
+        flex-direction: column;
+        /* Stack columns on medium screens */
+        align-items: center;
+        gap: 40px;
+    }
+
+    .contact-form,
+    .contact-info {
+        max-width: 500px;
+        /* Limit width when stacked */
+        width: 90%;
+        /* Take up more width */
+        padding: 30px;
+    }
+
+    .form-group {
+        margin-bottom: 20px;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        padding: 12px;
+        font-size: 0.95em;
+    }
+
+    .submit-btn {
+        padding: 12px 30px;
+        font-size: 1em;
+    }
+
+    .contact-info h3 {
+        font-size: 1.6em;
+        margin-bottom: 25px;
+    }
+
+    .contact-item {
+        font-size: 1em;
+        margin-bottom: 18px;
+    }
+}
+
+@media (max-width: 768px) {
+    .contact-section {
+        padding: 60px 0;
+    }
+
+    .contact-section h2 {
+        font-size: 2.5em;
+        margin-bottom: 35px;
+    }
+
+    .contact-section h2::after {
+        width: 70px;
+        bottom: -12px;
+    }
+
+    .contact-intro-text {
+        font-size: 1em;
+        margin-bottom: 30px;
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: 25px;
+        border-radius: 12px;
+    }
+
+    .form-group label {
+        font-size: 0.95em;
+    }
+
+    .form-group input,
+    .form-group textarea {
+        font-size: 0.9em;
+    }
+
+    .submit-btn {
+        padding: 10px 25px;
+        font-size: 0.95em;
+    }
+
+    .contact-info h3 {
+        font-size: 1.4em;
+        margin-bottom: 20px;
+    }
+
+    .contact-item {
+        font-size: 0.95em;
+        margin-bottom: 15px;
+    }
+
+    .contact-item i {
+        font-size: 1.3em;
+        margin-right: 12px;
+    }
+}
+
+@media (max-width: 480px) {
+    .contact-section {
+        padding: 50px 0;
+    }
+
+    .contact-section h2 {
+        font-size: 2.2em;
+        margin-bottom: 30px;
+    }
+
+    .contact-section h2::after {
+        width: 60px;
+        height: 3px;
+        bottom: -10px;
+    }
+
+    .contact-intro-text {
+        font-size: 0.95em;
+        margin-bottom: 25px;
+    }
+
+    .contact-form,
+    .contact-info {
+        padding: 20px;
+        border-radius: 10px;
+    }
+
+    .submit-btn {
+        width: 100%;
+        /* Full width button on very small screens */
+    }
+}

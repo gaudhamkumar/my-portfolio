@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>My Portfolio</title>
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-LN+7fdVzj6u52u30Kp6M/trliBMCMKTyK833zpbD+pXdCLuTusPj697FH4R/5mcr" crossorigin="anonymous">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+
+    <link rel="stylesheet" href="portfolio.css">
+</head>
+
+<body>
+
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="#">Portfolio</a>
+
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+
+            <div class="collapse navbar-collapse justify-content-end" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link px-2 py-3" href="#">Home</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 py-3" href="#about-me">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 py-3" href="#my-skills">Skills</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 py-3" href="#my-projects">Projects</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 py-3" href="#resume">Resume</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link px-2 py-3" href="#certifications">Certifications</a>
+                    </li>
+
+                    <li class="nav-item">
+                        <a class="nav-link px-2 py-3" href="#contact">Contact</a>
+                    </li>
+                </ul>
+            </div>
+
+            <button id="theme-toggle-btn" class="btn btn-link text-white ms-5 me-2 p-0 d-flex align-items-center">
+                <i class="fas fa-sun" id="theme-icon-sun"></i> <i class="fas fa-moon" id="theme-icon-moon"
+                    style="display: none;"></i> </button>
+        </div>
+    </nav>
+
+
+    <main class="hero-section d-flex align-items-center">
+        <div class="container-fluid text-center text-md-start">
+            <div class="row">
+                <div class="col-12 col-md-8 offset-md-1">
+                    <h1> Hi, I'm <span>GAUDHAM KUMAR</span></h1>
+                    <div class="typing-animation-container">
+                        <p class="lead typed-text" id="dynamic-typing-text"></p><span class="cursor">|</span>
+                    </div>
+                    <div class="container-fluid">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut consectetur hic aspernatur
+                            reprehenderit, commodi provident! Aperiam eveniet odio eius voluptas asperiores ut vitae
+                            repellendus corporis fuga, odit similique doloremque quia corrupti qui recusandae natus,
+                            vero nostrum ex fugit alias iste voluptatibus ad! Quasi quis ipsa natus repudiandae, fugit
+                            labore delectus.</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+
+    <section class="about-section" id="about-me">
+        <div class="container ">
+            <h2>About Me</h2>
+            <div class="about-content">
+                <div class="about-image-wrapper">
+                    <img src="https://placehold.co/300x300/3498db/ffffff?text=Your+Photo" alt="Gaudham Kumar"
+                        class="about-image">
+                </div>
+                <div class="about-text-content">
+                    <h3>Hello! I'm Gaudham Kumar.</h3>
+                    <p>
+                        I am a passionate and dedicated Web Developer with a strong focus on creating intuitive and
+                        engaging user experiences. With a background in Computer Science, I thrive on solving complex
+                        problems and transforming innovative ideas into functional and beautiful web applications.
+                    </p>
+                    <p>
+                        My expertise spans across **front-end development**, where I specialize in building responsive
+                        and
+                        accessible interfaces using modern technologies like **Bootstrap**, **JavaScript**, and **CSS
+                        frameworks**. I am
+                        always eager to learn new tools and techniques to deliver high-quality, performant, and scalable
+                        solutions.
+                    </p>
+                    <p>
+                        Beyond coding, I enjoy exploring new design trends, contributing to
+                        open-source projects, playing cricket, and listening to music which often inspires my creative
+                        approach to development.
+                        I believe in continuous learning and collaboration to achieve the best results.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section class="skills-section" id="my-skills">
+        <div class="container">
+            <h2>My Skills</h2>
+            <div class="skills-categories">
+                <div class="skill-category">
+                    <h3>Frontend Development</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">HTML5</div>
+                        <div class="skill-card">CSS3</div>
+                        <div class="skill-card">JavaScript</div>
+                        <div class="skill-card">Bootstrap</div>
+                        <div class="skill-card">Responsive Design</div>
+                    </div>
+                </div>
+
+                <div class="skill-category">
+                    <h3>Tools & Technologies</h3>
+                    <div class="skills-grid">
+                        <div class="skill-card">Git & GitHub</div>
+                        <div class="skill-card">VS Code</div>
+                        <div class="skill-card">Figma</div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+    <section class="projects-section" id="my-projects">
+        <div class="container">
+            <h2>My Projects</h2>
+            <div class="projects-grid">
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://placehold.co/400x250/6C63FF/ffffff?text=Project+1" alt="Project One Image"
+                            class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3>GK Course Akademy Website</h3>
+                        <p>Designed and developed the responsive frontend for a GK course academy website, showcasing
+                            courses, promotional offers, and detailed academy information.The site features a clean
+                            layout and smooth navigation, ensuring a seamless user
+                            experience to explore programs and offers.</p>
+                        <p>
+                            Key Technologies & Contributions:
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                            <li>Bootstrap</li>
+                        </ul>
+                        </p>
+
+                        <div class="project-links">
+                            <a href="#" class="btn live-demo-btn" target="_blank">Live Demo</a>
+                            <a href="https://github.com/gaudhamkumar/course_academy.git" class="btn github-btn"
+                                target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://placehold.co/400x250/3498db/ffffff?text=Project+2" alt="Project Two Image"
+                            class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3>My Books</h3>
+                        <p>Developed "My Books," a personal digital library application. This project allows users to
+                            create, view, and delete entries for their books, complete with a title, author, and
+                            description. It effectively demonstrates fundamental web development concepts such as CRUD
+                            operations (Create, Read, Update, Delete) and the design of an intuitive user interface for
+                            managing information efficiently.</p>
+                        <p>
+                            Key Technologies & Contributions:
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        </p>
+                        <div class="project-links">
+                            <a href="https://neon-rugelach-8ee1de.netlify.app/" class="btn live-demo-btn"
+                                target="_blank">Live Demo</a>
+                            <a href="https://github.com/gaudhamkumar/my_notes.git" class="btn github-btn"
+                                target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="project-card">
+                    <div class="project-image-wrapper">
+                        <img src="https://placehold.co/400x250/2ecc71/ffffff?text=Project+3" alt="Project Three Image"
+                            class="project-image">
+                    </div>
+                    <div class="project-content">
+                        <h3>TO-DO List</h3>
+                        <p>Developed the frontend of a to-do list web application which track tasks and complete it
+                            with a user friendly interface.The application provides an intuitive interface where users
+                            can add new tasks, mark them as completed, edit task details, and remove tasks as needed. As
+                            tasks are completed, progress bar updates in real-time, offering a clear view of daily
+                            productivity.
+                        </p>
+                        <p>
+                            Key Technologies & Contributions:
+                        <ul>
+                            <li>HTML</li>
+                            <li>CSS</li>
+                            <li>JavaScript</li>
+                        </ul>
+                        </p>
+                        <div class="project-links">
+                            <a href="https://stalwart-marzipan-054447.netlify.app/" class="btn live-demo-btn"
+                                target="_blank">Live Demo</a>
+                            <a href="https://github.com/gaudhamkumar/to-do_list.git" class="btn github-btn"
+                                target="_blank">GitHub</a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="resume" class="resume-section">
+        <div class="container">
+            <h2>My Resume</h2>
+            <p class="resume-intro-text">
+                A comprehensive overview of my technical skills, and educational background.
+                Download my resume below to learn more about my qualifications.
+            </p>
+            <a href="https://drive.google.com/file/d/1uiAKvESsto-CycH4keOsALLLZbESF2U7/view?usp=drivesdk"
+                class="btn download-resume-btn" download target="_blank">
+                <i class="fas fa-download"></i> Download Full Resume (PDF)
+            </a>
+
+        </div>
+    </section>
+
+
+    <section id="certifications" class="certifications-section">
+        <div class="container">
+            <h2>My Certifications</h2>
+            <div class="certifications-grid">
+
+                <div class="certification-card">
+                    <h3>Certified Frontend Developer</h3>
+                    <p class="issuer">Issued by: FreeCodeCamp</p>
+                    <p class="date">Date: May 2024</p>
+                    <a href="https://www.freecodecamp.org/certification/your-username/responsive-web-design"
+                        class="btn verify-btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Verify Credential
+                    </a>
+                </div>
+
+                <div class="certification-card">
+                    <h3>JavaScript Algorithms and Data Structures</h3>
+                    <p class="issuer">Issued by: Udemy</p>
+                    <p class="date">Date: February 2024</p>
+                    <a href="https://www.udemy.com/certificate/your-cert-id/" class="btn verify-btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Verify Credential
+                    </a>
+                </div>
+
+                <div class="certification-card">
+                    <h3>Responsive Web Design Certification</h3>
+                    <p class="issuer">Issued by: Coursera (via Google)</p>
+                    <p class="date">Date: January 2024</p>
+                    <a href="https://coursera.org/verify/your-cert-id" class="btn verify-btn" target="_blank">
+                        <i class="fas fa-external-link-alt"></i> Verify Credential
+                    </a>
+                </div>
+
+            </div>
+        </div>
+    </section>
+
+
+
+
+    <section id="contact" class="contact-section">
+        <div class="container">
+            <h2>Get In Touch</h2>
+            <p class="contact-intro-text">
+                Have a project in mind!  or just want to say hello? I'd love to hear from you!
+                Feel free to reach out using the form below or connect through my direct links.
+            </p>
+
+            <div class="contact-content-wrapper">
+                <form name="contact" method="POST" data-netlify="true" data-netlify-honeypot="bot-field"
+                    class="contact-form">
+                    <input type="hidden" name="form-name" value="contact" />
+                    <p class="hidden-field">
+                        <label>Don’t fill this out if you’re human: <input name="bot-field" /></label>
+                    </p>
+
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" name="name" required placeholder="Your Name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" required placeholder="your.email@example.com">
+                    </div>
+                    <div class="form-group">
+                        <label for="subject">Subject:</label>
+                        <input type="text" id="subject" name="subject" required placeholder="Subject of your message">
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message:</label>
+                        <textarea id="message" name="message" rows="6" required
+                            placeholder="Your message here..."></textarea>
+                    </div>
+                    <button type="submit" class="btn submit-btn">Send Message</button>
+                </form>
+
+                <div class="contact-info">
+                    <h3>Connect with me directly:</h3>
+                    <div class="contact-item">
+                        <i class="fas fa-envelope"></i>
+                        <a href="mailto:gauthamkumark11@gmail.com">gauthamkumark11@gmail.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-briefcase"></i> <a
+                            href="https://www.naukri.com/profile/edit?id=YOUR_PROFILE_ID_HERE" target="_blank">Naukri
+                            Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fab fa-github"></i>
+                        <a href="https://github.com/your-username" target="_blank">GitHub Profile</a>
+                    </div>
+                    <div class="contact-item">
+                        <i class="fas fa-map-marker-alt"></i>
+                        <span>Lawspet, Pondicherry, India</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q"
+        crossorigin="anonymous"></script>
+
+    <script src="portfolio.js"></script>
+</body>
+
+</html>
