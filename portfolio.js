@@ -1,7 +1,3 @@
-
-
-
-
 // --- Global Variables for Typing Animation State ---
 // These need to be accessible by typeDeleteCycle and initializeTypingAnimation
 let phraseIndex = 0;
