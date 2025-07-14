@@ -879,20 +879,14 @@ body.dark-mode .about-text-content p {
 
 .skill-card {
     background-color: #E0E2E6;
-    /* Slightly darker base for skill cards */
     color: #4A5568;
-    /* Darker text on skill card */
     padding: 18px 30px;
-    /* More padding */
     border-radius: 12px;
-    /* Rounded corners */
     font-size: 1.15em;
-    /* Slightly larger text */
     font-weight: 600;
-    /* Bolder text */
     transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.1), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(255, 255, 255, 0.7);
     /* Inner shadow for "pressed" look */
 }
 
@@ -901,10 +895,10 @@ body.dark-mode .about-text-content p {
     /* Subtle lift */
     background-color: #D1D4D8;
     /* Slightly darker on hover */
-    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.15), -4px -4px 10px rgba(255, 255, 255, 0.8);
+    box-shadow: 4px 4px 10px rgba(0, 0, 0, 0.4), -4px -4px 10px rgba(255, 255, 255, 0.8);
     /* Outer shadow on hover */
     color: #6C63FF;
-    /* Accent color on hover */
+
 }
 
 /* --- Dark Mode for Skills Section --- */
@@ -947,7 +941,7 @@ body.dark-mode .skill-card {
     /* Darker base for skill cards in dark mode */
     color: #C0C5CC;
     /* Lighter text on skill card in dark mode */
-    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.4), inset -2px -2px 5px rgba(60, 65, 70, 0.2);
+    box-shadow: inset 2px 2px 5px rgba(0, 0, 0, 0.5), inset -2px -2px 5px rgba(60, 65, 70, 0.2);
     /* Dark inner shadow */
 }
 
