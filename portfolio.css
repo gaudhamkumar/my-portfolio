@@ -828,7 +828,7 @@ body.dark-mode .about-text-content p {
     /* No explicit border, rely on shadow */
     border-radius: 20px;
     /* More rounded corners */
-    padding: 40px;
+    padding: 30px;
     /* Generous padding inside category cards */
     flex: 1 1 calc(50% - 50px);
     /* Two columns on larger screens */
