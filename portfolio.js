@@ -190,3 +190,46 @@ window.addEventListener('pageshow', (event) => {
 
     initializeTypingAnimation();
 });
+
+
+
+
+
+
+document.addEventListener("DOMContentLoaded", function() {
+  emailjs.init("Ht9prl7SyLvJ6oNyW");
+   
+
+
+
+    const form = document.getElementById("contact-form");
+    const statusMessage = document.getElementById("status-message");
+    const spinner = document.getElementById("loadingSpinner");
+    const sendBtn = document.getElementById("sendBtn");
+
+    form.addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        // Show spinner & disable button
+        spinner.classList.remove("d-none");
+        sendBtn.disabled = true;
+
+        // Send the form via EmailJS
+        emailjs.sendForm("service_rnnotqp", "template_qr6qd9d", this)
+            .then(() => {
+                statusMessage.innerText = "✅ Message sent successfully!";
+                statusMessage.classList.add("text-success");
+                statusMessage.classList.remove("text-danger");
+                form.reset();
+            }, (error) => {
+                statusMessage.innerText = "❌ Failed to send message. Please try again.";
+                statusMessage.classList.add("text-danger");
+                statusMessage.classList.remove("text-success");
+                console.error("EmailJS error:", error);
+            })
+            .finally(() => {
+                spinner.classList.add("d-none");
+                sendBtn.disabled = false;
+            });
+    });
+});
