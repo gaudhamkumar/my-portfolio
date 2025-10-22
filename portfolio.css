@@ -1129,15 +1129,13 @@ body.dark-mode .skill-card:hover {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    /* Responsive grid for projects */
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    /* Flexible grid: fits 4 cards on large screens */
     gap: 40px;
-    /* Space between project cards */
-    justify-content: center;
-    /* Center cards in the grid */
+    justify-items: center;
     padding-top: 20px;
-    /* Space between title and first row of cards */
 }
+
 
 .project-card {
     background-color: #FFFFFF;
